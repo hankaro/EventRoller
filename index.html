@@ -6,31 +6,40 @@
     <title>EventRoller</title>
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="script/roller.js" defer></script>
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
           <div>
-            <h3 class="float-md-start mb-0">Cover</h3>
+            <h3 class="float-md-start mb-0">DM tools</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link active" aria-current="page" href="#">Raid Event Roller</a>
+              <a class="nav-link" href="#">Travel Event Roller</a>
               <a class="nav-link" href="#">Contact</a>
             </nav>
           </div>
         </header>
       
         <main class="px-3">
-          <h1>Cover your page.</h1>
-          <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary fw-bold border-white">Learn more</a>
-          </p>
+          <h1>Roll for an Event</h1>
+          <p class="lead" id="eventText"><span class="text-white-50">Waiting for an event...</span></p>
+          <button class="btn btn-lg btn-primary fw-bold" id="eventButton">Click here to roll</button>
+
+          <div class="col-6 mt-5 mx-auto">
+            <div class="alert alert-secondary" role="alert" data-bs-theme="dark">
+              <h6 class="alert-heading">Roll for an enemy</h6>
+              <p id="enemyText"><span class="text-white-50">...</span></p>
+              <button class="btn btn-sm btn-secondary fw-bold" id="enemyButton">Roll 1d6 for enemy</button>
+            </div>
+          </div>
+
         </main>
       
         <footer class="mt-auto text-white-50">
-          <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
         </footer>
       </div>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
