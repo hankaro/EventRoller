@@ -6,45 +6,55 @@ let enemyText = document.getElementById('enemyText');
 
 
 function randomEventRoller(event) {
-    let diceRoll = Math.floor(Math.random() * diceNumbers.length);
-    eventNumber = diceNumbers[diceRoll];
-    console.log(eventData[eventNumber]);
-    eventText.textContent = `${eventData[eventNumber]}`
-    console.log(`Your event will be: ${eventNumber}`)
-    if (diceRoll > 4) {
-        diceNumbers.splice(diceRoll, 1);
-    }
-    console.log(diceRoll)
-    console.log(diceNumbers)
+    eventText.textContent = "Rolling...";
+    setTimeout(function() {
+        let diceRoll = Math.floor(Math.random() * diceNumbers.length);
+        eventNumber = diceNumbers[diceRoll];
+        console.log(eventData[eventNumber]);
+        eventText.textContent = `${eventData[eventNumber]}`
+        if (diceRoll > 4) {
+            diceNumbers.splice(diceRoll, 1);
+        }
+        console.log(diceRoll)
+        console.log(diceNumbers)
+    }, 1000); 
 }
 
-function enemyRoller(event)
-{
-    let rolli = Math.ceil(Math.random() * 6);
-    switch(rolli) 
-    {
-        case 1:
-            enemyText.textContent = "Kobold"
-            break;
-        case 2:
-            enemyText.textContent = "Cultist (lue: ryöstelijä)"
-            break;
-        case 3:
-            enemyText.textContent = "Ambush Drake"
-            break;
-        case 4:
-            enemyText.textContent = "Guard"
-            break;
-        case 5:
-            enemyText.textContent = "Greenest acolyte"
-            break;
-        case 6:
-            enemyText.textContent = "Kobold & Cultist (Paitsi jos x4, tällöin valitse jompi kumpi)"
-            break;
-        default:
-            enemyText.textContent = "No valid roll"
-    }
+function enemyRoller(event) {
+    enemyText.classList.remove("roll-text");
+    enemyText.classList.add("rolling-text");
+    enemyText.textContent = "Rolling...";
+
+    setTimeout(function() {
+        enemyText.classList.remove("rolling-text");
+        enemyText.classList.add("roll-text");
+        
+        let rolli = Math.ceil(Math.random() * 6);
+        switch(rolli) {
+            case 1:
+                enemyText.textContent = "Kobold";
+                break;
+            case 2:
+                enemyText.textContent = "Cultist (lue: ryöstelijä)";
+                break;
+            case 3:
+                enemyText.textContent = "Ambush Drake";
+                break;
+            case 4:
+                enemyText.textContent = "Guard";
+                break;
+            case 5:
+                enemyText.textContent = "Greenest acolyte";
+                break;
+            case 6:
+                enemyText.textContent = "Kobold & Cultist (Paitsi jos x4, tällöin valitse jompi kumpi)";
+                break;
+            default:
+                enemyText.textContent = "No valid roll";
+        }
+    }, 1000); 
 }
+
 
 eventButton.addEventListener('click', randomEventRoller);
 enemyButton.addEventListener('click', enemyRoller);
