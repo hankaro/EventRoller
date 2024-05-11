@@ -2,10 +2,16 @@
   "name": "eventroller",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script/roller.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "author": "Hanna Korhonen",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
